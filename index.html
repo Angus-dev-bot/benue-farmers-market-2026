@@ -1,12 +1,37 @@
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PublicReadGetObject",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::benue-farmers-market-2026/*"
-    }
-  ]
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benue Farmers Market 2026</title>
+    <style>
+        body { font-family: Arial; text-align: center; background: #f0fff0; margin: 0; padding: 20px; }
+        h1 { color: #2e7d32; }
+        .products { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .product { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px; }
+        .product img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>🌾 Benue Farmers Market 2026 🌾</h1>
+    <p>Fresh produce directly from Benue farmers to you</p>
+    
+    <div class="products">
+        <div class="product">
+            <img src="goat.jpg" alt="Goat">
+            <h3>Fresh Goat</h3>
+            <p>Healthy, farm-raised</p>
+        </div>
+        <div class="product">
+            <img src="mango.jpg" alt="Mango">
+            <h3>Sweet Mangoes</h3>
+            <p>In season now</p>
+        </div>
+        <div class="product">
+            <img src="palm-oil-1.jpg" alt="Palm Oil">
+            <h3>Pure Palm Oil</h3>
+            <p>Red oil from Benue</p>
+        </div>
+    </div>
+</body>
+</html>
