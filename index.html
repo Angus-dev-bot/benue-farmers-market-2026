@@ -1,37 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benue Farmers Market 2026</title>
-    <style>
-        body { font-family: Arial; text-align: center; background: #f0fff0; margin: 0; padding: 20px; }
-        h1 { color: #2e7d32; }
-        .products { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
-        .product { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px; }
-        .product img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Benue Farmers Market 2026</title>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Benue Farmers Market 2026</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial; background: #f5f5f5; }
+  
+  .container { max-width: 1000px; margin: 20px auto; padding: 20px; }
+  
+  h2 { text-align: center; color: #green; margin-bottom: 20px; }
+  h3 { color: #2d5016; margin: 30px 0 15px 0; border-bottom: 2px solid #ff6600; padding-bottom: 5px; }
+
+  /* GRID - 2 PER ROW */
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 20px;
+  }
+
+  /* MOBILE: 1 PER ROW */
+  @media (max-width: 650px) {
+    .products-grid { grid-template-columns: 1fr; }
+  }
+
+  /* CARD */
+  .product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  /* SMALL IMAGE - THIS IS THE FIX */
+  .product-card img {
+    width: 100%;
+    max-width: 200px; /* WON'T BE BIGGER THAN 250px */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto 10px auto;
+    display: block;
+  }
+
+  .product-card h4 { font-size: 18px; color: #333; margin-bottom: 5px; }
+  .product-card p { font-size: 16px; font-weight: bold; color: #ff6600; margin-bottom: 10px; }
+
+  .btn {
+    background: #25D366;
+    color: yellow;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .btn:hover { background: #1ebe5b; }
+</style>
 </head>
 <body>
-    <h1>🌾 Benue Farmers Market 2026 🌾</h1>
-    <p>Fresh produce directly from Benue farmers to you</p>
+
+<div class="container">
+  <h2>Benue Farmers Market</h2>
+
+<!-- HEADER ROW 2: CATEGORIES BAR -->
+<div style="background:white; padding:15px 20px; border-bottom:3px solid #ff6600;">
+  <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; max-width:1200px; margin:0 auto; font-size:16px;">
     
-    <div class="products">
-        <div class="product">
-            <img src="goat.jpg" alt="Goat">
-            <h3>Fresh Goat</h3>
-            <p>Healthy, farm-raised</p>
-        </div>
-        <div class="product">
-            <img src="mango.jpg" alt="Mango">
-            <h3>Sweet Mangoes</h3>
-            <p>In season now</p>
-        </div>
-        <div class="product">
-            <img src="palm-oil-1.jpg" alt="Palm Oil">
-            <h3>Pure Palm Oil</h3>
-            <p>Red oil from Benue</p>
-        </div>
+    <a href="#vegetables" style="color:blue; text-decoration:underline;">Vegetables</a>
+    <a href="#fruits" style="color:blue; text-decoration:underline;">Fruits</a>
+    <a href="#oils" style="color:blue; text-decoration:underline;">Oils</a>
+    <a href="#livestock" style="color:blue; text-decoration:underline;">Livestock</a>
+    
+    <a href="#tubers" style="text-decoration:none; text-align:center;">
+      <div style="font-size:28px;">🥔</div>
+      <div style="color:#2d5016; font-weight:bold;">Tubers</div>
+    </a>
+    
+    <a href="#vegetables" style="text-decoration:none; text-align:center;">
+      <div style="font-size:28px;">🥬</div>
+      <div style="color:#2d5016; font-weight:bold;">Vegetables</div>
+    </a>
+
+  </div>
+</div>
+
+<!-- 2. HERO -->
+<div style="background:#2d5016; color:white; text-align:center; padding:80px 20px;">
+  <h1 style="font-size:48px; margin:0;">🌽 Benue Farmers Market 2026 🌽</h1>
+  <p style="font-size:20px;">Fresh produce directly from Benue farmers</p>
+  <a href="#shop" style="background:#ff6600; color:white; padding:15px 30px; text-decoration:none; border-radius:5px; font-size:18px; display:inline-block; margin-top:20px;">Shop Now</a>
+</div>
+
+<!-- 3. ABOUT -->
+<div id="about" style="max-width:1000px; margin:50px auto; padding:20px; text-align:center; background:white;">
+  <h2 style="color:#2d5016; font-size:32px;">About Us</h2>
+  <p style="font-size:18px; line-height:1.8;">We connect you directly with trusted farmers in Benue State. No middlemen. Just fresh products.</p>
+</div>
+
+    <!-- JUMIA PRODUCTS -->
+<div class="products-section">
+    <h2 id="products" style="margin-bottom: 15px;">Featured Products</h2>
+    <div class="products-grid">
+       <h2 id="tubers" style="width: 100%; margin-top: 30px;">🥔 Tubers</h2>
+       
+<!-- TUBERS PRODUCTS -->
+<div class="product-card">
+    <img src="yam.jpg" alt="Benue Yam">
+    <h3>Benue Yam</h3>
+    <p><b>Benue Yam</b> - ₦8500</p>
+<button class="btn" onclick="addToBasket('yam/4', 8500)">Add to Basket</button>
+  </div>
+
+<div class="product-card">
+    <img src="cassava.jpg" alt="Cassava">
+    <h3>Fresh Cassava</h3>
+    <p><b>Cassava</b> - ₦12000</p>
+<button class="btn" onclick="addToBasket('cassava / boundle', 12000)">Add to Basket</button>
+  </div>
+ <!-- VEGETABLE PRODUCTS -->
+<h2 id="vegetable" style="width: 100%; margin-top: 30px;">🥬 vegetable</h2>
+ <div class="product-card">
+      <img src="tomatoes.jpg" alt="tomatoes">
+      <h3>fresh tomatoes</h3>
+     <p><b>tomatoes</b> - ₦15000</p>
+<button class="btn" onclick="addToBasket('tomatoes', 15000)">Add to Basket</button>
+  </div>
+      <div class="product-card">
+      <img src="pepper.jpg" alt="pepper">
+      <h3>fresh pepper</h3>
+     <p><b>pepper</b> - ₦25000</p>
+<button class="btn" onclick="addToBasket('pepper', 25000)">Add to Basket</button>
+  </div>
+       
+       <!-- OILS PRODUCTS -->
+<h2 id="oils" style="width: 100%; margin-top: 30px;">🛢️ Oils</h2>
+
+<div class="product-card">
+    <img src="palm oil1l.jpg" alt="Palm Oil">
+    <h3>Pure Palm Oil</h3>
+    <p><b>palm oil</b> - ₦2500</p>
+<button class="btn" onclick="addToBasket('palm oil', 2500)">Add to Basket</button>
+  </div>
+<div class="product-card">
+    <img src="palm oil4l.jpg" alt="Palm Oil">
+    <h3>Palm Oil</h3>
+     <p><b>palm oil</b> - ₦13500</p>
+<button class="btn" onclick="addToBasket('palm oil', 13500)">Add to Basket</button>
+  </div>
+
+   
+       <!-- FRUITS PRODUCTS -->
+<h2 id="fruits" style="width: 100%; margin-top: 30px;">🍎 Fruits</h2>
+ <div class="product-card">
+      <img src="oranges.jpg" alt="orange">
+      <h3>fresh orange</h3>
+     <p><b>orange</b> - ₦11500</p>
+<button class="btn" onclick="addToBasket('11500', 35000)">Add to Basket</button>
+  </div>
+       
+<div class="product-card">
+    <img src="mango.jpg" alt="Mango">
+    <h3>Fresh Mango</h3>
+     <p><b>mango</b> - ₦7500</p>
+<button class="btn" onclick="addToBasket('mango', 35000)">Add to Basket</button>
+  </div>
+
+ <!-- LIVESTOCK/AQU LIVESTOCK PRODUCTS -->
+<h2 id="livestock" style="width: 100%; margin-top: 30px;">🐄 livestocks</h2>
+
+<div class="product-card">
+    <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=400" alt="Chicken">
+    <h3>Live Chicken</h3>
+     <p><b>chicken</b> - ₦7500 above</p>
+<button class="btn" onclick="addToBasket('Groundnut', 7500)">Add to Basket</button>
+  </div>
+
+
+<div class="product-card">
+    <img src="goat.jpg" alt="Goat">
+    <h3>Goat</h3>
+     <p><b>goat</b> - ₦40500</p>
+<button class="btn" onclick="addToBasket('Goat', 40500)">Add to Basket</button>
+  </div>
+       
+<div class="product-card">
+    <img src="dry fish.jpg" alt="fish">
+    <h3>Goat</h3>
+     <p><b>dry fish</b> - ₦10500</p>
+<button class="btn" onclick="addToBasket('dry fish', 10500)">Add to Basket</button>
+  </div>
+
+       
+        <!-- CATEGORY TITLES FOR CLICKABLE MENU -->
+        <h2 id="grains" style="width: 100%; margin-top: 30px;">🌾 Grains</h2>
+   
+     <div class="product-card">
+    <img src="beans.jpg">
+    <h4>Brown Beans</h4>
+    <p>₦5,000</p>
+    <button class="btn" onclick="addToBasket('Beans/benue bag', 45000)">Add to Basket</button>
+  </div>
+
+</div>
+     <div class="product-card">
+      <img src="rice.jpg" alt="rice">
+      <h3>rice</h3>
+      <p><b>rice</b> - ₦35000</p>
+<button class="btn" onclick="addToBasket('rice', 35000)">Add to Basket</button>
+  </div>
+
+        <div class="product-card">
+    <img src="groundnut.jpg">
+    <h4>Groundnut</h4>
+    <p>₦35,000</p>
+    <button class="btn" onclick="addToBasket('Groundnut', 35000)">Add to Basket</button>
+  </div>
+
+     <div class="product-card">
+    <img src="corn.jpg" alt="corn">
+    <h3>corn</h3>
+     <p><b>corn</b> - ₦45000</p>
+<button class="btn" onclick="addToBasket('corn', 47000)">Add to Basket</button>
+  </div>
+
+<!-- HEADER -->
+<header style="background:#2d5016; color:white; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100;">
+  
+  <!-- LEFT: LOGO -->
+  <h2 style="margin:0;">🌽 Benue Market</h2>
+  
+  <!-- MIDDLE: SHOP + ABOUT LINKS -->
+  <nav>
+    <a href="#about" style="color:white; margin:0 15px; text-decoration:none; font-size:16px; font-weight:bold;">About</a>
+    <a href="#shop" style="color:white; margin:0 15px; text-decoration:none; font-size:16px; font-weight:bold;">Shop</a>
+  </nav>
+  
+  <!-- RIGHT: BASKET -->
+  <span style="background:#ff6600; padding:10px 20px; border-radius:20px; cursor:pointer;" onclick="showBasket()">
+    🛒 Basket <span id="basket-count">0</span>
+  </span>
+
+</header>
+
+    <!-- FOOTER -->
+<footer style="background:#2d5016; color:white; padding:40px 20px; margin-top:50px;">
+  <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; text-align:left;">
+    
+    <!-- COLUMN 1 -->
+    <div>
+      <h3 style="color:#ff6600;">🌽 Benue Farmers Market 2026</h3>
+      <p>Fresh produce directly from Benue farmers to your table.</p>
     </div>
-</body>
-</html>
+    
+    <!-- COLUMN 2 -->
+    <div>
+      <h3 style="color:#ff6600;">Quick Links</h3>
+      <p><a href="#" style="color:white; text-decoration:none;">Home</a></p>
+      <p><a href="#" style="color:white; text-decoration:none;">Shop</a></p>
+      <p><a href="#" style="color:white; text-decoration:none;">About Us</a></p>
+    </div>
+    
+    <!-- COLUMN 3 -->
+    <div>
+      <h3 style="color:#ff6600;">Contact Us</h3>
+      <p>📍 Makurdi, Benue State, Nigeria</p>
+      <p>📞 080-8148170728</p>
+      <p>📱 WhatsApp: 080-8148170728</p>
+      <p>✉️ benuefarmers@email.com</p>
+    </div>
+
+  </div>
+  
+  <!-- COPYRIGHT -->
+  <div style="text-align:center; margin-top:30px; padding-top:20px; border-top:1px solid #4a7c2a;">
+    <p>© 2026 Benue Farmers Market. All rights reserved. | Made with ❤️ for Benue Farmers</p>
+  </div>
+</footer>      
